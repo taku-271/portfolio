@@ -1,0 +1,245 @@
+html {
+  font-size: $ResetFontSize;
+}
+
+/* h1タイトル */
+h1 {
+  /* サイズ */
+  width: $HalfWidth;
+
+  /* スマホ用のサイズ */
+  @media screen and (max-width: $PhoneMaxWidth) {
+    width: $ResetWidth;
+  }
+  /* 中央寄せ */
+  margin: 0 auto;
+
+  /* タイトル画像 */
+  img {
+    width: $ResetWidth;
+  }
+}
+
+/* ヘッダー */
+.header {
+  /* サイズ */
+  width: $ResetWidth;
+  height: $ResetHeightView;
+
+  /* displayタイプ */
+  display: flex;
+  align-items: center;
+
+  /* 背景 */
+  background-image: url($bgImageUrl);
+  background-size: cover;
+
+  h1 {
+    /* アニメ―ション */
+    opacity: 0;
+    animation-name: "";
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/* メイン関係 */
+.main {
+  /* サイズ */
+  width: $ResetWidth;
+
+  /* profile, worksの共通 */
+  section {
+    /* アニメ―ション */
+    opacity: 0;
+    animation-name: "";
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeOut {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    /* サイズ */
+    width: $ResetWidth;
+    height: $ResetHeight;
+
+    /* 余白 */
+    padding: $padding;
+
+    /* article */
+    article {
+      /* 中央寄せ */
+      margin: 0 auto;
+
+      /* サイズ */
+      width: $ArticleWidth;
+      height: $ArticleHeight;
+      min-width: $ArticleMinWidth;
+      
+      /* スマホ用のサイズ */
+      @media screen and (max-width: $PhoneMaxWidth) {
+        width: $ResetWidth;
+        min-width: 0;
+      }
+
+      /* 余白 */
+      margin-top: $margin;
+      
+      /* 子要素を横並びにする */
+      display: flex;
+
+      /* スマホの時は横並びを解除 */
+      @media screen and (max-width: $PhoneMaxWidth) {
+        display: block;
+      }
+    }
+
+    /* サブタイトル */
+    h2 {
+      font-family: $EnglishFontFamily, sans-serif;
+      font-size: $SubTitleFontSize;
+      /* スマホ用のフォントサイズ */
+      @media screen and (max-width: $PhoneMaxWidth) {
+        font-size: $SubTitleFontSize * $PhoneTimes;
+      }
+    }
+    
+    /* 本文コンテンツ */
+    .content {
+      /* アイコンとコンテンツとの余白 */
+      margin-left: $margin;
+      /* 各カテゴリで上に余白 */
+      > div{
+        margin-top: $margin;
+      }
+    }
+
+    /* 本文 */
+    p {
+      font-family: $JapaneseFontFamily, sans-serif;
+      font-size: $ContentFontSize;
+      /* インデント */
+      padding-left: $padding;
+
+      /* スマホ用のフォントサイズ */
+      @media screen and (max-width: $PhoneMaxWidth) {
+        font-size: $ContentFontSize * $PhoneTimes;
+      }
+
+      /* プログラミング言語のみ */
+      img {
+        width: $ProgrammingWidth;
+        min-width: $ProgrammingMinWidth;
+      }
+    }
+
+    .note {
+      font-size: $NoteFontSize;
+      /* スマホ用のフォントサイズ */
+      @media screen and (max-width: $PhoneMaxWidth) {
+        font-size: $NoteFontSize * $PhoneTimes;
+      }
+      &::before {
+        content: '※';
+      }
+    }
+  }
+
+  /* profileのみ */
+  .profile {
+    .container {
+      /* アイコン */
+      .icons {
+        /* サイズ */
+        width: $IconWidth;
+        min-width: $IconMinWidth;
+        margin: 0 auto;
+        
+        /* アイコン画像 */
+        > img {
+          width: $ResetWidth;
+          border-radius: $Radius;
+        }
+
+        /* SNSアイコン */
+        .sns {
+          margin-top: $margin;
+          text-align: center;
+          img {
+            width: $SnsWidth;
+            margin: 0 $margin;
+          }
+        }
+      }
+    }
+  }
+
+  /* Works */
+  .works {
+    article {
+      /* 左側コンテナ */
+      .image {
+        /* 画像 */
+        img {
+          height: $WorkImageWidth;
+          border-radius: $Radius;
+        }
+      }
+
+      /* 右側コンテナ */
+      .content {
+        /* Worksのサブタイトル */
+        h2 {
+          font-family: $JapaneseFontFamily, sans-serif;
+        }
+      }
+    }
+  }
+}
+
+/* フッター関係 */
+.footer {
+  /* サイズ */
+  width: $ResetWidth;
+  height: $FooterHeight;
+
+  /* displayタイプ, 中央寄せ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  /* 背景 */
+  background-image: url($bgImageUrl);
+  background-size: cover;
+
+  /* コピーライト */
+  p {
+    font-size: $NoteFontSize;
+    color: $CopyrightFontColor;
+  }
+}
