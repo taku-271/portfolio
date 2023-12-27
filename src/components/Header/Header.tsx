@@ -1,4 +1,4 @@
-import { Box, Button } from "@yamada-ui/react";
+import { Box, Button, Heading } from "@yamada-ui/react";
 import { useRouter } from "next/router";
 
 const Header = () => {
@@ -12,38 +12,51 @@ const Header = () => {
     <Box
       h="100px"
       px="50px"
+      bg="#03a5fc"
       display="flex"
       justifyContent="space-between"
-      bg="linear-gradient(to top, white, 20%, #03a5fc )"
+      alignItems="center"
     >
-      <Button
-        variant="link"
-        color="white"
-        onClick={() => onLinkClickHandler("")}
+      <Heading as="button" color="white" onClick={() => onLinkClickHandler("")}>
+        Portfolio
+      </Heading>
+      <Box
+        py="20px"
+        h="full"
+        display="flex"
+        justifyContent="right"
+        alignItems="end"
+        gap="30px"
       >
-        HOME
-      </Button>
-      <Button
-        variant="link"
-        color="white"
-        onClick={() => onLinkClickHandler("about")}
-      >
-        ABOUT
-      </Button>
-      <Button
-        variant="link"
-        color="white"
-        onClick={() => onLinkClickHandler("works")}
-      >
-        WORKS
-      </Button>
-      <Button
-        variant="link"
-        color="white"
-        onClick={() => onLinkClickHandler("link")}
-      >
-        LINK
-      </Button>
+        <Button
+          variant="link"
+          color="white"
+          onClick={() => onLinkClickHandler("")}
+        >
+          HOME
+        </Button>
+        <Button
+          variant="link"
+          color="white"
+          onClick={() => onLinkClickHandler("about")}
+        >
+          ABOUT
+        </Button>
+        <Button
+          variant="link"
+          color="white"
+          onClick={() => onLinkClickHandler("works")}
+        >
+          WORKS
+        </Button>
+        <Button
+          variant="link"
+          color="white"
+          onClick={() => onLinkClickHandler("link")}
+        >
+          LINK
+        </Button>
+      </Box>
     </Box>
   );
 };
