@@ -5,7 +5,6 @@ const Index = () => {
   return (
     <Box textAlign="center">
       <Header />
-      <Heading>Portfolio</Heading>
     </Box>
   );
 };
