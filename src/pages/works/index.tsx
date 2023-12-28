@@ -1,7 +1,7 @@
 import Header from "@/components/Header/Header";
 import { Box } from "@yamada-ui/react";
 
-const Index = () => {
+const Works = () => {
   return (
     <Box textAlign="center">
       <Header />
@@ -9,4 +9,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Works;
