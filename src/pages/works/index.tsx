@@ -1,9 +1,12 @@
-import Header from "@/components/Header/Header";
 import PageLayout from "@/components/PageLayout/PageLayout";
-import { Box } from "@yamada-ui/react";
+import WorksPage from "@/components/Works/WorksPage/WorksPage";
 
 const Works = () => {
-  return <PageLayout></PageLayout>;
+  return (
+    <PageLayout title="Works">
+      <WorksPage />
+    </PageLayout>
+  );
 };
 
 export default Works;
