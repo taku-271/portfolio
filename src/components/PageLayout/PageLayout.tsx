@@ -11,7 +11,7 @@ const PageLayout = ({
   return (
     <Box textAlign="center">
       <Header />
-      <Heading my="20" size="3xl">
+      <Heading mt="150px" mb="20" size="3xl">
         {title}
       </Heading>
       {children}
