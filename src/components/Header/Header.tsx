@@ -1,9 +1,12 @@
 import { tabs } from "@/constants";
-import { Box, Button, Heading, Motion } from "@yamada-ui/react";
+import { Box, Button, Heading, Motion, useScroll } from "@yamada-ui/react";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const Header = () => {
   const router = useRouter();
+  // TODO; useScrollを使ってスクロールしたらヘッダーを透明にする
+  // const { scrollY } = useScroll();
 
   const underlineAnimation = {
     initial: { width: "0%" },
@@ -17,11 +20,14 @@ const Header = () => {
   return (
     <Box
       h="100px"
+      w="100%"
       px="50px"
       bg="#03a5fc"
       display="flex"
       justifyContent="space-between"
       alignItems="center"
+      position="fixed"
+      top="0"
     >
       <Motion whileHover={{ opacity: 0.8 }}>
         <Heading
