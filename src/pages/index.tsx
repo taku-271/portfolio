@@ -1,7 +1,7 @@
-import PageLayout from "@/components/PageLayout/PageLayout";
+import { Heading } from "@yamada-ui/react";
 
 const Index = () => {
-  return <PageLayout title=""></PageLayout>;
+  return <Heading>Hello World!</Heading>;
 };
 
 export default Index;

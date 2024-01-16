@@ -6,11 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export",
     "lint": "next lint"
   },
   "dependencies": {
-    "@yamada-ui/react": "^1.0.2",
+    "@yamada-ui/react": "^1.1.9",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18"
