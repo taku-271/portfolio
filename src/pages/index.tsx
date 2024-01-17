@@ -13,7 +13,7 @@ const Index = () => {
   useEffect(() => {
     let timer = setTimeout(() => {
       setIsLoading(false);
-    }, 4000);
+    }, 3000);
 
     return () => {
       clearTimeout(timer);
@@ -32,7 +32,7 @@ const Index = () => {
         <AnimatePresence>
           <Motion
             animate={{ opacity: 0 }}
-            transition={{ duration: 0.5, delay: 3.5 }}
+            transition={{ ease: "easeIn", duration: 0.5, delay: 2.5 }}
           >
             <CircleProgress
               isAnimation
@@ -46,9 +46,9 @@ const Index = () => {
         <Motion
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 2 }}
+          transition={{ ease: "easeOut", duration: 1 }}
         >
-          <Heading>Hello World!</Heading>
+          <Heading color="skyblue">Hello World!</Heading>
         </Motion>
       )}
     </Box>
