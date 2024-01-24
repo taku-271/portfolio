@@ -1,19 +1,15 @@
-import {
-  AnimatePresence,
-  Box,
-  CircleProgress,
-  Heading,
-  Motion,
-} from "@yamada-ui/react";
+import { Opening } from "@/features/Opening";
+import { display, transparent } from "@/styles/common";
+import { AnimatePresence, Box, Heading, Motion } from "@yamada-ui/react";
 import { useEffect, useState } from "react";
 
 const Index = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isOpening, setIsOpening] = useState(true);
 
   useEffect(() => {
     let timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
+      setIsOpening(false);
+    }, 8000);
 
     return () => {
       clearTimeout(timer);
@@ -21,37 +17,26 @@ const Index = () => {
   });
 
   return (
-    <Box
-      w="100%"
-      h="98vh"
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-    >
-      {isLoading ? (
-        <AnimatePresence>
-          <Motion
-            animate={{ opacity: 0 }}
-            transition={{ ease: "easeIn", duration: 0.5, delay: 2.5 }}
-          >
-            <CircleProgress
-              isAnimation
-              isRounded
-              color="skyblue"
-              thickness={5}
-            />
-          </Motion>
-        </AnimatePresence>
+    <AnimatePresence mode="wait">
+      {isOpening ? (
+        <Motion exit={transparent}>
+          <Opening key="opening" />
+        </Motion>
       ) : (
         <Motion
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ ease: "easeOut", duration: 1 }}
+          initial={transparent}
+          animate={display}
+          transition={{ duration: 1 }}
+          key="content"
+          display="flex"
+          justifyContent="center"
         >
-          <Heading color="skyblue">Hello World!</Heading>
+          <Box>
+            <Heading>Hello World!</Heading>
+          </Box>
         </Motion>
       )}
-    </Box>
+    </AnimatePresence>
   );
 };
 
