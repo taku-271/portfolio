@@ -1,0 +1,17 @@
+{
+  "name": "portfolio",
+  "dockerComposeFile": "docker-compose.yaml",
+  "service": "portfolio",
+  "workspaceFolder": "/workspace",
+  "remoteUser": "bun",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "Github.vscode-pull-request-github",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  }
+}
